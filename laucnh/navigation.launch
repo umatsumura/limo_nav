@@ -43,6 +43,6 @@
  <!--- Run Waypoints -->
         <include file="$(find orne_waypoints_editor)/launch/edit_waypoints_viz.launch"></include>
  
-  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find unitree_a1)/rviz_cfg/limo_rviz.rviz"></node>
+  <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find unitree_a1)/rviz_cfg/limo_rviz.rviz"></node> -->
 
 </launch>

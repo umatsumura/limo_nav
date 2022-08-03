@@ -1,0 +1,8 @@
+
+<launch>
+
+
+ <!--- Run Waypoints -->
+        <include file="$(find orne_waypoints_editor)/launch/edit_waypoints_viz.launch"></include>
+
+</launch>

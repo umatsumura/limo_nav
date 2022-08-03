@@ -16,9 +16,10 @@
 
 	<node pkg="amcl" type="amcl" name="amcl" output="screen">
         <rosparam file="$(find limo_bringup)/param/amcl_params_diff.yaml" command="load" />
-	    <param name="initial_pose_x"            value="0"/>
+	  <!--  <param name="initial_pose_x"            value="0"/>
 		<param name="initial_pose_y"            value="0"/>
-		<param name="initial_pose_a"            value="0"/>
+		<param name="initial_pose_a"            value="0"/> -->
+       <rosparam file="$(find fulanghua_waypoints_nav)/param/initial_pose.yaml" command="load" />
 	</node>
 
     <!--  ************** Navigation ***************  -->
@@ -43,10 +44,5 @@
 
  <!-- launch the waypoints nav -->
         <include file="$(find fulanghua_waypoints_nav)/launch/nav.launch"></include>
-
- <!--- Run Waypoints -->
-        <include file="$(find orne_waypoints_editor)/launch/edit_waypoints_viz.launch"></include>
- 
-  <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find unitree_a1)/rviz_cfg/limo_rviz.rviz"></node> -->
 
 </launch>

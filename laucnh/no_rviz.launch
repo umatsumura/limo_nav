@@ -14,6 +14,8 @@
         <remap from="imu_data" to="imu" />
     </node>
 
+	
+
 	<node pkg="amcl" type="amcl" name="amcl" output="screen">
         <rosparam file="$(find limo_bringup)/param/amcl_params_diff.yaml" command="load" />
 	  <!--  <param name="initial_pose_x"            value="0"/>

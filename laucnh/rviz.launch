@@ -1,9 +1,5 @@
 
 <launch>
-        <arg name = "model_xacro" default = "$(find limo_description)/urdf/limo_four_diff.xacro" />
-
-    <param name="robot_description" command="$(find xacro)/xacro $(arg model_xacro)"/>
-
  <!--- Run Waypoints -->
         <include file="$(find orne_waypoints_editor)/launch/edit_waypoints_viz.launch"></include>
 

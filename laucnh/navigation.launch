@@ -8,7 +8,7 @@
        <node name="map_server" pkg="map_server" type="map_server" args="$(find limo_nav)/map/map_sh.yaml"></node>
 
  <!-- launch the limo_navigation-->
-          <node pkg="robot_pose_ekf" name="robot_pose_ekf" type="robot_pose_ekf">
+    <node pkg="robot_pose_ekf" name="robot_pose_ekf" type="robot_pose_ekf">
         <param name="output_frame" value="odom" />
         <param name="base_footprint_frame" value="base_link"/>
         <remap from="imu_data" to="imu" />
@@ -16,9 +16,7 @@
 
 	<node pkg="amcl" type="amcl" name="amcl" output="screen">
         <rosparam file="$(find limo_bringup)/param/amcl_params_diff.yaml" command="load" />
-	    <param name="initial_pose_x"            value="0"/>
-		<param name="initial_pose_y"            value="0"/>
-		<param name="initial_pose_a"            value="0"/>
+		<rosparam file="$(find fulanghua_waypoints_nav)/param/initial_pose.yaml" command="load" />
 	</node>
 
     <!--  ************** Navigation ***************  -->
@@ -48,5 +46,6 @@
         <include file="$(find orne_waypoints_editor)/launch/edit_waypoints_viz.launch"></include>
  
   <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find unitree_a1)/rviz_cfg/limo_rviz.rviz"></node> -->
-
+ <!-- battery motnitor-->
+	
 </launch>
